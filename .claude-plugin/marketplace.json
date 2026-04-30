@@ -21,6 +21,18 @@
       "source": "./plugins/better-rust",
       "category": "languages",
       "keywords": ["rust", "code-quality", "best-practices"]
+    },
+    {
+      "name": "better-agents-md",
+      "description": "Reviews AGENTS.md / CLAUDE.md context files against best practices",
+      "version": "1.0.0",
+      "author": {
+        "name": "bettervibe",
+        "email": "hello@bettervibe.org"
+      },
+      "source": "./plugins/better-agents-md",
+      "category": "workflow",
+      "keywords": ["agents-md", "claude-md", "context", "code-quality", "best-practices"]
     }
   ]
 }

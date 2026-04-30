@@ -15,3 +15,9 @@ npx skills add bettervibe-org/skills --skill SKILLNAME
 ```bash
 npx skills add bettervibe-org/skills --skill better-rust
 ```
+
+### better-agents-md
+
+```bash
+npx skills add bettervibe-org/skills --skill better-agents-md
+```
