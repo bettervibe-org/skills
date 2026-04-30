@@ -1,6 +1,6 @@
 # skills
 
-AI coding skills from [bettervibe](https://bettervibe.org).
+Agent skills for AI coding harnesses like Claude Code/Codex/Gemini from [bettervibe](https://bettervibe.org).
 
 ## Installation
 
