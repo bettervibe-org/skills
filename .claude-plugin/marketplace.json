@@ -1,0 +1,26 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "skills",
+  "owner": {
+    "name": "bettervibe",
+    "email": "hello@bettervibe.org"
+  },
+  "metadata": {
+    "description": "AI coding skills from bettervibe",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "better-rust",
+      "description": "A skill on how to write good Rust code",
+      "version": "1.0.0",
+      "author": {
+        "name": "bettervibe",
+        "email": "hello@bettervibe.org"
+      },
+      "source": "./plugins/better-rust",
+      "category": "languages",
+      "keywords": ["rust", "code-quality", "best-practices"]
+    }
+  ]
+}

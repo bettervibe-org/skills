@@ -1,0 +1,12 @@
+{
+  "name": "better-rust",
+  "description": "A skill on how to write good Rust code",
+  "version": "1.0.0",
+  "author": {
+    "name": "bettervibe",
+    "email": "hello@bettervibe.org"
+  },
+  "repository": "https://github.com/bettervibe-org/skills",
+  "license": "MIT",
+  "keywords": ["rust", "code-quality", "best-practices"]
+}
