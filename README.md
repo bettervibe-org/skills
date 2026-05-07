@@ -33,3 +33,11 @@ Audits, critiques, and proposes names for agent skills — validates hard rules,
 ```bash
 npx skills add bettervibe-org/skills --skill better-skill-names
 ```
+
+### bootstrap-project
+
+Bootstraps a fresh repo for agentic engineering. Asks three questions (language, project kind, external boundaries) and scaffolds a strict toolchain, lefthook pre-commit hooks, one-command bring-up, and a hand-written `AGENTS.md` — small enough to grow into, never something to delete. Architecture is the user's call, not the scaffold's.
+
+```bash
+npx skills add bettervibe-org/skills --skill bootstrap-project
+```

@@ -45,6 +45,18 @@
       "source": "./plugins/better-skill-names",
       "category": "workflow",
       "keywords": ["agent-skills", "naming", "skill-authoring", "best-practices"]
+    },
+    {
+      "name": "bootstrap-project",
+      "description": "Bootstraps a fresh repo for agentic engineering — language-agnostic scaffold with strict tooling, lefthook hooks, one-command bring-up, and a hand-written AGENTS.md",
+      "version": "1.0.0",
+      "author": {
+        "name": "bettervibe",
+        "email": "hello@bettervibe.org"
+      },
+      "source": "./plugins/bootstrap-project",
+      "category": "workflow",
+      "keywords": ["bootstrap", "scaffold", "init", "project-setup", "best-practices"]
     }
   ]
 }
