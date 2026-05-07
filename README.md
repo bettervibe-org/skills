@@ -25,3 +25,11 @@ Reviews `AGENTS.md` / `CLAUDE.md` context files against best practices and repor
 ```bash
 npx skills add bettervibe-org/skills --skill better-agents-md
 ```
+
+### better-skill-names
+
+Audits, critiques, and proposes names for agent skills — validates hard rules, flags style issues, and surfaces inconsistencies across a skill collection.
+
+```bash
+npx skills add bettervibe-org/skills --skill better-skill-names
+```

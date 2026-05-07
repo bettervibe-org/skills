@@ -1,0 +1,12 @@
+{
+  "name": "better-skill-names",
+  "description": "Audits, critiques, and generates names for agent skills",
+  "version": "1.0.0",
+  "author": {
+    "name": "bettervibe",
+    "email": "hello@bettervibe.org"
+  },
+  "repository": "https://github.com/bettervibe-org/skills",
+  "license": "MIT",
+  "keywords": ["agent-skills", "naming", "skill-authoring", "best-practices"]
+}
