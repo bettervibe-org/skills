@@ -43,7 +43,7 @@ Reject any candidate that fails these. Don't try to "soften" — propose a repla
 *Bad*: name promises more than the skill delivers (`git` for a commit-message-only skill) or less (`pdf-text-extraction` for a skill that also fills forms and merges). Rename to match the actual `description`.
 
 ### Sibling consistency
-*Good*: `better-rust`, `better-agents-md`, `better-skill-names` — same prefix, same form, easy to scan.
+*Good*: `review-agents-md`, `review-prs`, `review-migrations` — same prefix (verb), same form, easy to scan.
 *Bad*: ad-hoc names that ignore the convention already established by neighbors. When auditing, treat the dominant pattern as the rule and flag outliers.
 
 ### Reserved-word adjacency

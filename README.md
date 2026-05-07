@@ -18,12 +18,12 @@ Guidance for writing idiomatic Rust that works with the borrow checker and type 
 npx skills add bettervibe-org/skills --skill better-rust
 ```
 
-### better-agents-md
+### review-agents-md
 
 Reviews `AGENTS.md` / `CLAUDE.md` context files against best practices and reports concrete cuts, rewrites, and additions.
 
 ```bash
-npx skills add bettervibe-org/skills --skill better-agents-md
+npx skills add bettervibe-org/skills --skill review-agents-md
 ```
 
 ### better-skill-names

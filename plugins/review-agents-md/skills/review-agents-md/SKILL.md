@@ -1,5 +1,5 @@
 ---
-name: better-agents-md
+name: review-agents-md
 description: Reviews an AGENTS.md or CLAUDE.md file against best practices and reports concrete fixes. Use when the user asks to review, audit, lint, or improve an AGENTS.md / CLAUDE.md / context file, or says "review my agents file".
 ---
 
