@@ -10,7 +10,7 @@ The meta-principle: a context file earns its tokens. Every line must tell the ag
 1. Read the target file (default: `AGENTS.md`, then `CLAUDE.md` at repo root). If both exist, review both.
 2. Evaluate against each rubric below. For every issue, quote the offending lines and propose a concrete rewrite — not just a critique.
 3. Report findings grouped by severity: **Cut** (delete), **Rewrite** (fix in place), **Add** (missing required content).
-4. End with a one-line verdict: total lines now vs. proposed, and whether a `## Tech Stack` section exists.
+4. End with a one-line verdict: total lines now vs. proposed, and whether the tech stack is mentioned.
 
 Do not auto-edit the file unless the user asks. Surface the diff first.
 
@@ -24,9 +24,9 @@ Do not auto-edit the file unless the user asks. Surface the diff first.
 *Good*: Conventions, architecture choices, tooling quirks ("we use bun, not node"; "migrations run via `make db-migrate`, not the ORM CLI").
 *Bad*: Anything derivable from `package.json`, `Cargo.toml`, file extensions, or a five-second skim of the repo. Cut it.
 
-### Required `## Tech Stack` section
-*Good*: A `## Tech Stack` section exists and lists language/runtime/framework choices the agent would otherwise guess wrong (e.g., "Bun 1.x runtime, not Node"; "Postgres 16 + Drizzle, not Prisma").
-*Bad*: Missing entirely, or padded with obvious entries. If missing, propose one drafted from the repo's manifests.
+### Tech stack is mentioned
+*Good*: The language/runtime/framework choices the agent would otherwise guess wrong are mentioned somewhere in the file (e.g., "Bun 1.x runtime, not Node"; "Postgres 16 + Drizzle, not Prisma"). A dedicated `## Tech Stack` section is fine but not required — a one-liner near the top works too.
+*Bad*: No mention at all of the non-obvious stack choices, so the agent has to infer them from manifests. If missing, propose a short addition drafted from the repo's manifests.
 
 ### Auto-generated content
 *Good*: Hand-written, curated.
@@ -68,11 +68,11 @@ Structure the review as:
 - L34: <quote>. Issue: bare "don't". Proposed: <do-form>.
 
 ## Add
-- Missing `## Tech Stack` section. Proposed draft:
+- Tech stack not mentioned. Proposed addition (one-liner or section):
   <draft>
 
 ## Verdict
-Before: 187 lines. After proposed edits: ~60 lines. Tech Stack section: missing → drafted.
+Before: 187 lines. After proposed edits: ~60 lines. Tech stack mentioned: no → added.
 ```
 
 Be specific. Quote line numbers. Propose replacement text, not just labels.
