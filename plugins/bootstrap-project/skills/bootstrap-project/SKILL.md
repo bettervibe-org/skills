@@ -118,6 +118,8 @@ Do **not** include: a checklist of what the formatter/linter does, a file-tree d
 
 Default to `AGENTS.md`. Use `CLAUDE.md` only if the user explicitly asks for Claude-specific context.
 
+If running inside a Claude Code environment, also create a `CLAUDE.md` symlink pointing to `AGENTS.md` (`ln -s AGENTS.md CLAUDE.md`), so Claude Code's default discovery picks up the same file. Skip if `CLAUDE.md` already exists.
+
 ## Verification before handoff
 
 Before reporting "done", run, in order:
