@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Vibe Check — {{REPO_NAME}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --amber: #DA7756;
+    --amber-light: #E8956F;
+    --amber-dim: #C4623E;
+    --bg: #0D0F11;
+    --surface: #1E2227;
+    --elevated: #252A30;
+    --text: #E8E4DF;
+    --stone: #9B9690;
+    --muted: #6B6660;
+    --green: #7EC699;
+    --blue: #6BA3BE;
+    --red: #E06C75;
+    --purple: #B48EAD;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: 'JetBrains Mono', monospace; font-weight: 300; line-height: 1.7; }
+  body { padding: 48px 24px 96px; max-width: 980px; margin: 0 auto; }
+  a { color: var(--amber); }
+  h1, h2, h3 { font-weight: 700; letter-spacing: -1.5px; margin: 0 0 12px; }
+  h1 { font-size: 40px; letter-spacing: -2px; }
+  h2 { font-size: 22px; letter-spacing: -1px; margin-top: 48px; }
+  h3 { font-size: 16px; letter-spacing: 0; font-weight: 600; }
+  .caption { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+  .prompt::before { content: "$ "; color: var(--green); }
+
+  header { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; padding-bottom: 32px; border-bottom: 1px solid var(--elevated); }
+  header .meta { font-size: 13px; color: var(--stone); }
+  header .meta b { color: var(--text); font-weight: 500; }
+
+  /* score gauge */
+  .gauge { --pct: {{SCORE}}; width: 160px; height: 160px; border-radius: 50%; background: conic-gradient(var(--amber) calc(var(--pct) * 1%), var(--elevated) 0); display: grid; place-items: center; position: relative; animation: spin 1.2s ease-out; }
+  .gauge::before { content: ""; position: absolute; inset: 12px; border-radius: 50%; background: var(--bg); }
+  .gauge .num { position: relative; font-size: 38px; font-weight: 700; letter-spacing: -2px; }
+  .gauge .num small { font-size: 14px; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+  @keyframes spin { from { background: conic-gradient(var(--amber) 0%, var(--elevated) 0); } }
+
+  /* tldr */
+  .tldr { background: var(--surface); border-left: 3px solid var(--amber); padding: 24px 28px; margin: 32px 0; border-radius: 4px; }
+  .tldr .row { display: grid; grid-template-columns: 140px 1fr; gap: 16px; padding: 6px 0; font-size: 14px; }
+  .tldr .row .k { color: var(--muted); font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; align-self: center; }
+  .tldr .row .v { color: var(--text); }
+  .tldr .verdict { color: var(--amber-light); font-weight: 500; font-size: 16px; }
+
+  /* category badges */
+  .categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 24px 0 32px; }
+  .cat { background: var(--surface); padding: 20px; border-radius: 4px; border: 1px solid var(--elevated); }
+  .cat .icon { font-size: 24px; margin-bottom: 8px; }
+  .cat .title { font-size: 13px; font-weight: 600; color: var(--text); }
+  .cat .score { font-size: 11px; color: var(--muted); margin: 4px 0 10px; letter-spacing: 1px; }
+  .cat .badge { display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 99px; }
+  .cat .badge.earned { background: rgba(218, 119, 86, 0.15); color: var(--amber-light); border: 1px solid var(--amber-dim); }
+  .cat .badge.locked { background: var(--elevated); color: var(--muted); border: 1px solid var(--elevated); }
+
+  /* item cards */
+  .items { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+  details.item { background: var(--surface); border-radius: 4px; border: 1px solid var(--elevated); overflow: hidden; }
+  details.item[data-vibe="bad"] { border-left: 3px solid var(--red); }
+  details.item[data-vibe="warn"] { border-left: 3px solid var(--purple); }
+  details.item[data-vibe="ok"] { border-left: 3px solid var(--blue); }
+  details.item[data-vibe="great"] { border-left: 3px solid var(--green); }
+  details.item[data-vibe="na"] { border-left: 3px solid var(--muted); opacity: 0.7; }
+  summary { padding: 14px 20px; cursor: pointer; list-style: none; display: grid; grid-template-columns: 32px 1fr auto; gap: 16px; align-items: center; font-size: 14px; }
+  summary::-webkit-details-marker { display: none; }
+  summary .n { color: var(--muted); font-size: 11px; font-weight: 500; }
+  summary .name { color: var(--text); font-weight: 400; }
+  summary .vibe { font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--stone); }
+  .item .body { padding: 0 20px 20px 68px; font-size: 13px; color: var(--stone); }
+  .item .body .evidence { color: var(--stone); margin-bottom: 12px; }
+  .item .body code, .item .body pre { background: var(--bg); color: var(--text); padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+  .item .body pre { padding: 12px 16px; overflow-x: auto; margin: 8px 0; }
+  .item .body .fix { background: var(--bg); border-left: 2px solid var(--amber); padding: 10px 14px; margin: 8px 0; font-size: 12px; color: var(--text); }
+  .item .body .fix b { color: var(--amber); font-weight: 500; }
+
+  /* bonus */
+  .bonus { margin-top: 32px; padding: 20px 24px; background: var(--surface); border: 1px dashed var(--amber-dim); border-radius: 4px; }
+  .bonus h3 { color: var(--amber); margin-bottom: 12px; }
+  .bonus ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--stone); }
+  .bonus li { padding: 4px 0; }
+  .bonus li b { color: var(--text); font-weight: 500; }
+
+  /* pioneer sticker */
+  .pioneer { position: fixed; top: 24px; right: 24px; transform: rotate(8deg); background: var(--amber); color: var(--bg); padding: 10px 16px; border-radius: 4px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; box-shadow: 0 4px 20px rgba(218, 119, 86, 0.35); }
+
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--elevated); font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+</style>
+</head>
+<body>
+
+{{PIONEER_STICKER}}
+
+<header>
+  <div>
+    <div class="caption prompt">bettervibe agentic engineering vibe check</div>
+    <h1>{{REPO_NAME}}</h1>
+    <div class="meta">
+      <b>{{STACK_LANGUAGE}}</b> · {{STACK_TOOLCHAIN}}
+    </div>
+  </div>
+  <div class="gauge">
+    <div class="num">{{SCORE}}<small>/100</small></div>
+  </div>
+</header>
+
+<section class="tldr">
+  <div class="row"><div class="k">Verdict</div><div class="v verdict">{{VERDICT}}</div></div>
+  <div class="row"><div class="k">Biggest win</div><div class="v">{{TOP_WIN}}</div></div>
+  <div class="row"><div class="k">Biggest miss</div><div class="v">{{TOP_MISS}}</div></div>
+  <div class="row"><div class="k">Do this now</div><div class="v">{{DO_NOW}}</div></div>
+  <div class="row"><div class="k">Bonuses</div><div class="v">{{BONUS_COUNT}}</div></div>
+</section>
+
+<h2>Category badges</h2>
+<div class="categories">
+  <!-- Each: <div class="cat"><div class="icon">🧱</div><div class="title">Foundations</div><div class="score">28 / 40</div><span class="badge earned">🛡️ Type-Safe Citizen</span></div> -->
+  {{CATEGORY_CARDS}}
+</div>
+
+<h2>Findings</h2>
+<div class="items">
+  <!--
+    For each of the 14 items, one <details> block:
+    <details class="item" data-vibe="great" open?>
+      <summary>
+        <span class="n">01</span>
+        <span class="name">AGENTS.md / CLAUDE.md</span>
+        <span class="vibe">🚀 Ship-Ready</span>
+      </summary>
+      <div class="body">
+        <div class="evidence">Found at <code>AGENTS.md:1</code> — covers stack, run commands, gotchas.</div>
+        <div class="fix"><b>Fix:</b> none.</div>  <!-- omit fix block for 🚀/👍 -->
+      </div>
+    </details>
+
+    Default the <details> to open for 🩹 and 💀, closed for 🚀, 👍, ➖.
+    data-vibe values: great (🚀), ok (👍), warn (🩹), bad (💀), na (➖)
+  -->
+  {{ITEM_CARDS}}
+</div>
+
+<section class="bonus">
+  <h3>🎁 Bonus finds</h3>
+  <!-- <ul><li><b>name</b> — why it helps the agent.</li></ul>  -- or "<p class='caption'>None spotted.</p>" -->
+  {{BONUS_LIST}}
+</section>
+
+<footer>
+  bettervibe agentic engineering vibe check · {{DATE}}
+</footer>
+
+</body>
+</html>

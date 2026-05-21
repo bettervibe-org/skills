@@ -41,3 +41,11 @@ Bootstraps a fresh repo for agentic engineering. Asks three questions (language,
 ```bash
 npx skills add bettervibe-org/skills --skill bootstrap-project
 ```
+
+### vibe-check-agentic-engineering
+
+Grades a repository on how well it's set up for agentic engineering — strict types, one-command bring-up, pre-commit hooks, dead-code guardrails, doc/code drift checks, agent-runnable end-to-end tests, parallel review panels, blast-radius friction, and agent-tuned tooling. Produces a Vibe Score 0-100 with verdict.
+
+```bash
+npx skills add bettervibe-org/skills --skill vibe-check-agentic-engineering
+```
