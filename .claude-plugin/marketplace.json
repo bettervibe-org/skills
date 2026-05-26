@@ -57,6 +57,18 @@
       "source": "./plugins/bootstrap-project",
       "category": "workflow",
       "keywords": ["bootstrap", "scaffold", "init", "project-setup", "best-practices"]
+    },
+    {
+      "name": "vibe-check-agentic-engineering",
+      "description": "Grades a repository on how well it's set up for agentic engineering — produces a Vibe Score 0-100 with verdict and HTML report",
+      "version": "1.0.0",
+      "author": {
+        "name": "bettervibe",
+        "email": "hello@bettervibe.org"
+      },
+      "source": "./plugins/vibe-check-agentic-engineering",
+      "category": "workflow",
+      "keywords": ["agentic-engineering", "vibe-check", "code-quality", "best-practices", "evaluation"]
     }
   ]
 }
