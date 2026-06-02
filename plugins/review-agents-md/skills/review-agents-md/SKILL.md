@@ -35,6 +35,10 @@ Do not auto-edit the file unless the user asks. Surface the diff first.
 *Good*: The language/runtime/framework choices the agent would otherwise guess wrong are mentioned somewhere in the file (e.g., "Bun 1.x runtime, not Node"; "Postgres 16 + Drizzle, not Prisma"). A dedicated `## Tech Stack` section is fine but not required — a one-liner near the top works too.
 *Bad*: No mention at all of the non-obvious stack choices, so the agent has to infer them from manifests. If missing, propose a short addition drafted from the repo's manifests.
 
+### Project stage & change policy
+*Good*: States the project's stage and the change freedom it grants — e.g. "Prototype: no backwards compatibility. Break APIs, delete dead code, no migration shims." or "Production, safety-critical: every change needs a test and a migration path; never break a public endpoint." This single line reshapes how the agent weighs every change. Mixed zones (`core/` production, `experiments/` break-freely) belong in a decision table, not one line.
+*Bad*: Silent on stage, forcing the agent to guess — so it adds defensive shims to a throwaway prototype, or breaks a public API in production software. If missing, ask the user which stage applies and propose a one-line statement; never guess prototype-vs-production from the code alone (a polished-looking repo can still be a prototype, and guessing wrong is costly in both directions).
+
 ### Auto-generated content
 *Good*: Hand-written, curated.
 *Bad*: Looks `/init`-generated — boilerplate headings, file-tree dumps, restatement of `package.json` scripts. Auto-generated context files measurably reduce success rates. Recommend deletion and replacement with a hand-written file.
