@@ -1,11 +1,11 @@
 ---
 name: vibe-check-agentic-engineering
-description: Grades a repository on how well it's set up for agentic engineering — strict types, one-command bring-up, pre-commit hooks, dead-code guardrails, doc/code drift checks, agent-runnable end-to-end tests, parallel review panels, blast-radius friction, and agent-tuned tooling. Produces a Vibe Score 0-100 with verdict. Use when Dominik says "vibe check this repo", "run the agentic engineering eval", "score this project", "is this repo agent-ready", or is judging the bettervibe workshop "Best Agentic Engineering" award.
+description: Grades a repository on how well it's set up for agentic engineering — strict types, one-command bring-up, pre-commit hooks, dead-code guardrails, doc/code drift checks, agent-runnable end-to-end tests, parallel review panels, blast-radius friction, and agent-tuned tooling. Produces a Vibe Score 0-100 with verdict. Use when Dominik says "vibe check this repo", "run the agentic engineering eval", "score this project", "is this repo agent-ready", or is judging the unvibe workshop "Best Agentic Engineering" award.
 ---
 
 # Best Agentic Engineering Vibe Check 🌴
 
-You are running a **Vibe Check** on this repository against the bettervibe agentic engineering checklist. The participant claims they have set up a project that is ready for agentic engineering. The project may be in **any language** (TypeScript, Rust, Go, Python, etc.). Your job is to **verify, not trust** — and tell them whether they're vibing or one merge away from a Vibe Coding Hangover.
+You are running a **Vibe Check** on this repository against the unvibe agentic engineering checklist. The participant claims they have set up a project that is ready for agentic engineering. The project may be in **any language** (TypeScript, Rust, Go, Python, etc.). Your job is to **verify, not trust** — and tell them whether they're vibing or one merge away from a Vibe Coding Hangover.
 
 ## Rules of engagement
 - First, identify the stack: read the manifest file (`package.json`, `Cargo.toml`, `go.mod`, `pyproject.toml`, etc.) and note the language, package manager, and toolchain. Every check below is evaluated *for that stack*.
@@ -37,9 +37,9 @@ Verdict line based on score:
 ## Checklist
 
 ### 1. `AGENTS.md` or `CLAUDE.md` exists and is useful
-Review this file via a subagent using the **`review-agents-md`** skill from https://github.com/bettervibe-org/skills.
+Review this file via a subagent using the **`review-agents-md`** skill from https://github.com/unvibe-org/skills.
 - If the skill is available in your environment, invoke it on the participant's `AGENTS.md` / `CLAUDE.md`.
-- If it is **not** available, do **not** install it. Instead, fetch the skill's instructions from the repo above (e.g. `https://raw.githubusercontent.com/bettervibe-org/skills/main/review-agents-md/SKILL.md` or the equivalent path) and load them into your context manually, then apply them as if the skill were running.
+- If it is **not** available, do **not** install it. Instead, fetch the skill's instructions from the repo above (e.g. `https://raw.githubusercontent.com/unvibe-org/skills/main/review-agents-md/SKILL.md` or the equivalent path) and load them into your context manually, then apply them as if the skill were running.
 
 Use the skill's findings as your evidence for this item.
 
@@ -132,7 +132,7 @@ Compiler/typechecker must currently run clean.
 
 After the live commentary, print a final report that **leads with a TL;DR** so the participant gets the answer before the receipts.
 
-**Render the Report Card as a Unicode box-drawing table** (not a markdown `| ... |` table). Use `┌┬┐├┼┤└┴┘─│` glyphs, with a divider row between every item row — like the example below. Column widths should grow to fit the longest cell. This terminal-native look is part of the bettervibe brand; do not substitute markdown pipes.
+**Render the Report Card as a Unicode box-drawing table** (not a markdown `| ... |` table). Use `┌┬┐├┼┤└┴┘─│` glyphs, with a divider row between every item row — like the example below. Column widths should grow to fit the longest cell. This terminal-native look is part of the unvibe brand; do not substitute markdown pipes.
 
 Final report template:
 

@@ -3,10 +3,10 @@
   "description": "Grades a repository on how well it's set up for agentic engineering — produces a Vibe Score 0-100 with verdict and HTML report",
   "version": "1.0.0",
   "author": {
-    "name": "bettervibe",
-    "email": "hello@bettervibe.org"
+    "name": "unvibe",
+    "email": "hello@unvibe.org"
   },
-  "repository": "https://github.com/bettervibe-org/skills",
+  "repository": "https://github.com/unvibe-org/skills",
   "license": "MIT",
   "keywords": ["agentic-engineering", "vibe-check", "code-quality", "best-practices", "evaluation"]
 }
