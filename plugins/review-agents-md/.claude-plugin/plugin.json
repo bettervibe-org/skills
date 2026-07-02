@@ -3,10 +3,10 @@
   "description": "Reviews AGENTS.md / CLAUDE.md context files against best practices",
   "version": "1.0.0",
   "author": {
-    "name": "bettervibe",
-    "email": "hello@bettervibe.org"
+    "name": "unvibe",
+    "email": "hello@unvibe.org"
   },
-  "repository": "https://github.com/bettervibe-org/skills",
+  "repository": "https://github.com/unvibe-org/skills",
   "license": "MIT",
   "keywords": ["agents-md", "claude-md", "context", "code-quality", "best-practices"]
 }

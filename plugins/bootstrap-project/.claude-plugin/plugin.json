@@ -3,10 +3,10 @@
   "description": "Bootstraps a fresh repository for agentic engineering — language-agnostic. Picks toolchain, scaffolds layout, wires pre-commit hooks, generates a hand-written AGENTS.md, and produces one-command bring-up.",
   "version": "1.0.0",
   "author": {
-    "name": "bettervibe",
-    "email": "hello@bettervibe.org"
+    "name": "unvibe",
+    "email": "hello@unvibe.org"
   },
-  "repository": "https://github.com/bettervibe-org/skills",
+  "repository": "https://github.com/unvibe-org/skills",
   "license": "MIT",
   "keywords": ["bootstrap", "scaffold", "init", "project-setup", "best-practices"]
 }

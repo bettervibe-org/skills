@@ -2,11 +2,11 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "skills",
   "owner": {
-    "name": "bettervibe",
-    "email": "hello@bettervibe.org"
+    "name": "unvibe",
+    "email": "hello@unvibe.org"
   },
   "metadata": {
-    "description": "AI coding skills from bettervibe",
+    "description": "AI coding skills from unvibe",
     "version": "1.0.0"
   },
   "plugins": [
@@ -15,8 +15,8 @@
       "description": "A skill on how to write good Rust code",
       "version": "1.0.0",
       "author": {
-        "name": "bettervibe",
-        "email": "hello@bettervibe.org"
+        "name": "unvibe",
+        "email": "hello@unvibe.org"
       },
       "source": "./plugins/better-rust",
       "category": "languages",
@@ -27,8 +27,8 @@
       "description": "Reviews AGENTS.md / CLAUDE.md context files against best practices",
       "version": "1.0.0",
       "author": {
-        "name": "bettervibe",
-        "email": "hello@bettervibe.org"
+        "name": "unvibe",
+        "email": "hello@unvibe.org"
       },
       "source": "./plugins/review-agents-md",
       "category": "workflow",
@@ -39,8 +39,8 @@
       "description": "Audits, critiques, and proposes names for agent skills",
       "version": "1.0.0",
       "author": {
-        "name": "bettervibe",
-        "email": "hello@bettervibe.org"
+        "name": "unvibe",
+        "email": "hello@unvibe.org"
       },
       "source": "./plugins/better-skill-names",
       "category": "workflow",
@@ -51,8 +51,8 @@
       "description": "Bootstraps a fresh repo for agentic engineering — language-agnostic scaffold with strict tooling, lefthook hooks, one-command bring-up, and a hand-written AGENTS.md",
       "version": "1.0.0",
       "author": {
-        "name": "bettervibe",
-        "email": "hello@bettervibe.org"
+        "name": "unvibe",
+        "email": "hello@unvibe.org"
       },
       "source": "./plugins/bootstrap-project",
       "category": "workflow",
@@ -63,8 +63,8 @@
       "description": "Grades a repository on how well it's set up for agentic engineering — produces a Vibe Score 0-100 with verdict and HTML report",
       "version": "1.0.0",
       "author": {
-        "name": "bettervibe",
-        "email": "hello@bettervibe.org"
+        "name": "unvibe",
+        "email": "hello@unvibe.org"
       },
       "source": "./plugins/vibe-check-agentic-engineering",
       "category": "workflow",
